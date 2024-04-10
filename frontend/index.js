@@ -1,3 +1,5 @@
+const { quotes } = require("./data");
+
 function moduleProject1() {
   const footer = document.querySelector('footer')
   const currentYear = new Date().getFullYear()
@@ -7,9 +9,30 @@ function moduleProject1() {
 
   // 👉 TASK 1 - Add a "widget" class name to widgets so CSS kicks in
   //  ✨ add your code here
+  const widgets = document.querySelectorAll('section>div');
+  widgets.forEach(widget => {
+    widget.classList.add('widget')
+
+
+  });
+
+
 
   // 👉 TASK 2 - Build a "Quote of the Day" widget
   //  ✨ add your code here
+
+  const ranIdx = Math.floor(Math.random() * quotes.length)
+  const ranQuote = quotes[ranIdx]
+  const quote = document.createElement('div')
+  const qouteText = ranQuote.quote
+  quote.textContent = qouteText
+  console.log(quote)
+  const widget1 = document.querySelector('.quoteoftheday')
+  widget1.appendChild(quote)
+
+
+
+
 
   // 👉 TASK 3 - Build a "Corporate Speak" widget
   //  ✨ add your code here
